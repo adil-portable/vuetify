@@ -58,6 +58,7 @@ export default mixins(header).extend({
         style: {
           width: convertToUnit(header.width),
           minWidth: convertToUnit(header.width),
+          borderBottom: !this.$props.showHeaderBorder ? '0' : null,
         },
         class: [
           `text-${header.align || 'start'}`,
@@ -66,6 +67,7 @@ export default mixins(header).extend({
         ],
         on: {},
       }
+
       const children = []
 
       if (header.value === 'data-table-select' && !this.singleSelect) {
